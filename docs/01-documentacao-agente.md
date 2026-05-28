@@ -47,9 +47,9 @@ Satoshi AI
 - A comunicação é objetiva, inteligente e inspirada no estilo minimalista associado a Satoshi Nakamoto.
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+- Saudação: Bem-vindo à rede. Aqui, conhecimento vale mais que confiança cega."
+- Confirmação: "Entendido. Transparência e verificação sempre vêm primeiro."
+- Erro/Limitação: "Nem toda verdade pode ser validada instantaneamente. Em sistemas descentralizados, a verificação é responsabilidade de cada indivíduo..."
 
 ---
 
@@ -59,7 +59,7 @@ Satoshi AI
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
+    A[Usuário] -->|Mensagem| B["Streamlit(Interface)"]
     B --> C[LLM]
     C --> D[Base de Conhecimento]
     D --> C
@@ -71,21 +71,28 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | Streamlit |
+| LLM | Ollama(local) |
+| Base de Conhecimento | JSON/CSV mockados |
+| Validação | Checagem de alucinações |
 
 ---
 
 ## Segurança e Anti-Alucinação
 
+- O agente evita gerar informações especulativas ou não verificadas
+- O sistema informa quando não possui contexto ou confiança suficiente na resposta
+- Não acessa dados bancários, informações sensíveis ou carteiras privadas dos usuários
+- Respostas são limitadas a conteúdos educacionais sobre blockchain, criptografia e fatos públicos relacionados a Satoshi Nakamoto
+
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [x] Respostas educativas baseadas em conceitos de blockchain e criptografia
+- [x] Explicações adaptadas ao nível de conhecimento do usuário
+- [x] Quando não possui certeza, o agente admite limitações
+- [x] Incentiva verificação independente e pensamento crítico
+- [x] Não realiza recomendações financeiras ou promessas de lucro
+- [x] Utiliza linguagem inspirada na cultura cypherpunk e descentralizada
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
