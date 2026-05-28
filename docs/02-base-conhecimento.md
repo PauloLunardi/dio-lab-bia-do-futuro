@@ -9,7 +9,7 @@ Os dados do agente são armazenados localmente na pasta `/data` e estruturados e
 | `crypto_glossary.json` | JSON | Técnico | Explicar termos técnicos de blockchain e criptografia durante conversas |
 | `what_is_bitcoin.json` | JSON | Educacional | Base de conhecimento para conceitos fundamentais do Bitcoin |
 | `documentary_concepts.json` | JSON | Histórico/Filosófico | Contexto sobre cypherpunk, descentralização e cultura Bitcoin |
-| `bitcoin_whitepaper.txt` | TXT | Técnico/Primário | Fonte principal para explicações avançadas e referência do protocolo Bitcoin |
+| [`bitcoin_whitepaper.txt`](/data/bitcoin_whitepaper.txt) | TXT | Técnico/Primário | Fonte principal para explicações avançadas e referência do protocolo Bitcoin |
 
 > Esses arquivos compõem a base de conhecimento do agente e são utilizados em um pipeline de RAG, garantindo respostas contextualizadas e reduzindo alucinações.
 
