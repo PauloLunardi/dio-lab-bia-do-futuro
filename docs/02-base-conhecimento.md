@@ -6,7 +6,7 @@ Os dados do agente são armazenados localmente na pasta `/data` e estruturados e
 
 | Arquivo | Formato | Tipo de Dado | Utilização no Agente |
 |---------|---------|--------------|----------------------|
-|  [`bitcoin_whitepaper.txt`](/data/bitcoin_whitepaper.txt)  | TXT | Técnico/Primário | Fonte principal do protocolo Bitcoin (base original de Satoshi) |
+|  [`bitcoin_whitepaper.txt`](/data/knowledge_base/bitcoin_whitepaper.txt)  | TXT | Técnico/Primário | Fonte principal do protocolo Bitcoin (base original de Satoshi) |
 | `bitcoin_dataset.json` | JSON | Educacional | Dataset sobre conceitos fundamentais do Bitcoin |
 | `celestia_dataset.json` | JSON | Filosófico | Contexto sobre cypherpunk, descentralização e visão inspirada em Satoshi |
 | `sha256_*.json` | JSON | Técnico | Conhecimento avançado sobre criptografia SHA-256 |
