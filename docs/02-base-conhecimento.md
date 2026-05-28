@@ -6,10 +6,10 @@ Os dados do agente são armazenados localmente na pasta `/data` e estruturados e
 
 | Arquivo | Formato | Tipo de Dado | Utilização no Agente |
 |---------|---------|--------------|----------------------|
-| `crypto_glossary.json` | JSON | Técnico | Explicar termos técnicos de blockchain e criptografia durante conversas |
-| `what_is_bitcoin.json` | JSON | Educacional | Base de conhecimento para conceitos fundamentais do Bitcoin |
-| `documentary_concepts.json` | JSON | Histórico/Filosófico | Contexto sobre cypherpunk, descentralização e cultura Bitcoin |
-| [`bitcoin_whitepaper.txt`](/data/bitcoin_whitepaper.txt) | TXT | Técnico/Primário | Fonte principal para explicações avançadas e referência do protocolo Bitcoin |
+|  [`bitcoin_whitepaper.txt`](/data/bitcoin_whitepaper.txt)  | TXT | Técnico/Primário | Fonte principal do protocolo Bitcoin (base original de Satoshi) |
+| `bitcoin_dataset.json` | JSON | Educacional | Dataset sobre conceitos fundamentais do Bitcoin |
+| `celestia_dataset.json` | JSON | Filosófico | Contexto sobre cypherpunk, descentralização e visão inspirada em Satoshi |
+| `sha256_*.json` | JSON | Técnico | Conhecimento avançado sobre criptografia SHA-256 |
 
 > Esses arquivos compõem a base de conhecimento do agente e são utilizados em um pipeline de RAG, garantindo respostas contextualizadas e reduzindo alucinações.
 
