@@ -1,0 +1,20 @@
+[
+  {
+    "feature":"per-hash",
+    "n_train":500000,
+    "rounds_learnable":"[1, 2, 3]",
+    "rounds_at_chance":"[4, 5, 6, 8]",
+    "ci_resolution_floor":0.0061979503,
+    "conclusion":"sharp learnability cliff after round 3",
+    "provenance":"HF Tier B seed0 (exact)"
+  },
+  {
+    "feature":"per-batch",
+    "n_train":2000000,
+    "rounds_learnable":"[3]",
+    "rounds_at_chance":"[4, 5, 6, 8]",
+    "ci_resolution_floor":0.1,
+    "conclusion":"same round-4 cliff reproduced; not feature-bottlenecked",
+    "provenance":"DEVLOG 2026-05-16 local n=2M probe; coarse floor; qualitative (r3=1.00; r4-8 CI brackets 0.5)"
+  }
+]
