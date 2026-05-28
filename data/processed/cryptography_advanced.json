@@ -1,0 +1,30 @@
+[
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 0, 'model': 'tiny_cnn', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.5007625, 'advantage': 0.0015249999999999986, 'ci_lo': 0.49830942764154007, 'ci_hi': 0.5032155447256841, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': True, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 0, 'model': 'linear_probe', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.4991125, 'advantage': -0.001774999999999971, 'ci_lo': 0.4966594585498896, 'ci_hi': 0.5015655736128495, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': False, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 1, 'model': 'tiny_cnn', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.499125, 'advantage': -0.0017500000000000293, 'ci_lo': 0.49667195821544186, 'ci_hi': 0.501578073494301, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': False, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 1, 'model': 'linear_probe', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.500275, 'advantage': 0.0005500000000000504, 'ci_lo': 0.4978219339967231, 'ci_hi': 0.5027280560373577, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': True, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 2, 'model': 'tiny_cnn', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.499225, 'advantage': -0.0015500000000000513, 'ci_lo': 0.4967719555949829, 'ci_hi': 0.5016780724907892, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': False, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'full_structure', 'seed': 2, 'model': 'linear_probe', 'rounds': 64, 'n_train': 800000, 'n_val': 160000, 'accuracy': 0.50099375, 'advantage': 0.001987500000000031, 'ci_lo': 0.4985406754413102, 'ci_hi': 0.5034467885454819, 'ci_resolution_floor': 0.004899909961350135, 'is_best_model': True, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  },
+  {
+    "topic": "cryptography_advanced",
+    "content": "{'experiment': 'indistinguishability', 'seed': 0, 'model': 'tiny_cnn', 'rounds': 64, 'n_train': 4000000, 'n_val': 800000, 'accuracy': 0.500065, 'advantage': 0.00012999999999996348, 'ci_lo': 0.4989687232581321, 'ci_hi': 0.5011612762711881, 'ci_resolution_floor': 0.002191306351441454, 'is_best_model': True, 'controls_ok': True, 'positive_ok': True, 'negative_ok': True, 'structure_detected': False, 'conclusion': 'no structure detected above the detection floor'}"
+  }
+]
