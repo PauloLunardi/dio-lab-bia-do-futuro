@@ -23,9 +23,11 @@ python-dotenv
 ## Como Rodar
 
 ```bash
-# Instalar dependências
-pip install -r requirements.txt
+# 1. Instalar dependências:
+pip install streamlit pandas requests
 
-# Rodar a aplicação
-streamlit run app.py
-```
+# 2. Garantir que o Ollama está rodando
+ollama serve
+
+# 3. Rodar a aplicação:
+streamlit run .\src\app.py
