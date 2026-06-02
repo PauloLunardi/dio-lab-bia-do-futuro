@@ -58,8 +58,37 @@ data/
 - Após o processamento, os arquivos estruturados são carregados pela aplicação e disponibilizados para construção do contexto enviado ao modelo.
 
 #### Exemplo de carregamento dos dados:
+```python
+import json
 
+with open(
+    "data/processed/bitcoin_knowledge.json",
+    "r",
+    encoding="utf-8"
+) as f:
+    bitcoin_knowledge = json.load(f)
 
+with open(
+    "data/processed/cryptography_advanced.json",
+    "r",
+    encoding="utf-8"
+) as f:
+    cryptography_advanced = json.load(f)
+
+with open(
+    "data/processed/cypherpunk_knowledge.json",
+    "r",
+    encoding="utf-8"
+) as f:
+    cypherpunk_knowledge = json.load(f)
+
+with open(
+    "data/knowledge_base/bitcoin_whitepaper.txt",
+    "r",
+    encoding="utf-8"
+) as f:
+    whitepaper = f.read()
+```
 
 ### Fluxo de Integração dos Dados
 
@@ -109,20 +138,8 @@ data/
 
 
 Essa abordagem permite separar as fontes originais dos dados processados, facilitando a manutenção, expansão da base de conhecimento e futura evolução para arquiteturas de RAG.
-
 - O agente não consome diretamente os datasets originais. Antes da utilização, os dados passam por uma etapa de processamento e estruturação para otimizar o consumo pela IA.
 
-
-Datasets Hugging Face
-Whitepaper TXT
-        ↓
-Processamento
-        ↓
-JSON estruturado para IA
-        ↓
-Carregamento
-        ↓
-Prompt
 
 ### Como os dados são usados no sistema?
 
