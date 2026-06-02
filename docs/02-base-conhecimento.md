@@ -1,5 +1,11 @@
 # Base de Conhecimento
 
+## Prompt usado para esta etapa:
+> [!TIP]
+>
+> Me ajude a documentar a base de conhecimento do agente Satoshi AI. A base utiliza datasets do Hugging Face, conteúdos sobre Bitcoin, criptografia, filosofia cypherpunk e o Bitcoin Whitepaper. Preciso documentar fontes de dados, estrutura de pastas, processamento dos dados, estratégia de integração, carregamento dos arquivos e exemplos de contexto utilizado pela IA.
+>
+
 ## Dados Utilizados
 
 Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estruturados em formatos JSON e TXT. Cada fonte possui uma função específica dentro do sistema de RAG (Retrieval-Augmented Generation).
