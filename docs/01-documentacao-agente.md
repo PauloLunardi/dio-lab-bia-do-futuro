@@ -1,5 +1,12 @@
 # Documentação do Agente
 
+## Prompt usado para esta etapa
+> [!TIP]
+>
+> Me ajude a documentar um agente de IA chamado Satoshi AI. O agente é inspirado em Satoshi Nakamoto e tem como objetivo ensinar Bitcoin, blockchain, criptografia, SHA-256 e filosofia cypherpunk. Preciso definir: problema que resolve, público-alvo, personalidade do agente, tom de voz, capacidades, limitações e estratégias para reduzir alucinações. Use o template abaixo como base:
+>
+
+
 ## Caso de Uso
 
 ### Problema
