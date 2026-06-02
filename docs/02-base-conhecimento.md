@@ -2,7 +2,7 @@
 
 ## Dados Utilizados
 
-Os dados do agente são armazenados localmente na pasta `/data` e estruturados em formatos JSON e TXT. Cada fonte possui uma função específica dentro do sistema de RAG (Retrieval-Augmented Generation).
+Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estruturados em formatos JSON e TXT. Cada fonte possui uma função específica dentro do sistema de RAG (Retrieval-Augmented Generation).
 
 | Arquivo | Formato | Tipo de Dado | Utilização no Agente |
 |---------|---------|--------------|----------------------|
