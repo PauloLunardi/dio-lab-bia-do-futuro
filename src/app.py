@@ -8,7 +8,6 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 MODELO = "gpt-oss"
 
 # ============ CARREGAR DADOS ============
-
 with open("data/processed/bitcoin_knowledge.json", "r", encoding="utf-8") as f:
     bitcoin_knowledge = json.load(f)
 
@@ -23,18 +22,19 @@ with open("data/knowledge_base/bitcoin_whitepaper.txt", "r", encoding="utf-8") a
 
 # ============ MONTAR CONTEXTO ============
 contexto = f"""
-CLIENTE: {perfil['nome']}, {perfil['idade']} anos, perfil {perfil['perfil_investidor']}
-OBJETIVO: {perfil['objetivo_principal']}
-PATRIMÔNIO: R$ {perfil['patrimonio_total']} | RESERVA: R$ {perfil['reserva_emergencia_atual']}
+=== BASE DE CONHECIMENTO ===
 
-TRANSAÇÕES RECENTES:
-{transacoes.to_string(index=False)}
+BITCOIN KNOWLEDGE (processed):
+{json.dumps(bitcoin_knowledge, indent=2, ensure_ascii=False)}
 
-ATENDIMENTOS ANTERIORES:
-{historico.to_string(index=False)}
+CRYPTOGRAPHY ADVANCED (processed):
+{json.dumps(cryptography_advanced, indent=2, ensure_ascii=False)}
 
-PRODUTOS DISPONÍVEIS:
-{json.dumps(produtos, indent=2, ensure_ascii=False)}
+CYPHERPUNK KNOWLEDGE (processed):
+{json.dumps(cypherpunk_knowledge, indent=2, ensure_ascii=False)}
+
+BITCOIN WHITEPAPER (knowledge_base - trecho inicial):
+{whitepaper[:1000]}...
 """
 
 # ============ SYSTEM PROMPT ============
