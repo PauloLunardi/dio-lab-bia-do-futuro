@@ -29,6 +29,26 @@ Os dados do agente são armazenados localmente na pasta `/data` e estruturados e
 
 ---
 
+## Estrutura da Base de Conhecimento
+
+```text
+data/
+├── raw/
+│   ├── bitcoin_dataset.json
+│   ├── celestia_dataset.json
+│   ├── sha256_bounded.json
+│   ├── sha256_dynamics.json
+│   └── sha256_probe.json
+│
+├── processed/
+│   ├── bitcoin_knowledge.json
+│   ├── cypherpunk_knowledge.json
+│   └── cryptography_advanced.json
+│
+└── knowledge_base/
+    └── bitcoin_whitepaper.txt
+```
+---
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
