@@ -53,15 +53,83 @@ data/
 
 ### Como os dados são carregados?
 
-- Os dados são carregados localmente a partir da pasta `/data`.
-- Durante a inicialização do sistema, os arquivos são processados e indexados para busca semântica.
+- Os dados podem ser encontrados localmente a partir da pasta [`/data`](/data).
+- O agente não consome diretamente os datasets originais. Antes da utilização, os dados passam por uma etapa de processamento e estruturação para otimizar o consumo pela IA.
+- Após o processamento, os arquivos estruturados são carregados pela aplicação e disponibilizados para construção do contexto enviado ao modelo.
+
+#### Exemplo de carregamento dos dados:
+
+
+
+### Fluxo de Integração dos Dados
+
+```text
+            Fontes de Conhecimento
+┌─────────────────────────┬──────────────────────────┐
+│   Datasets Hugging Face │    Bitcoin Whitepaper    │
+└─────────────┬───────────┴──────────────┬───────────┘
+              │                          │
+              ▼                          ▼
+
+                   data/raw/
+              ├── bitcoin_dataset.json
+              ├── celestia_dataset.json
+              └── sha256_*.json
+                         │
+                         ▼
+
+            Processamento de Dados (Pandas + Python)
+                         │
+                         ▼
+
+            JSON Estruturado para IA
+
+                 data/processed/
+              ├── bitcoin_knowledge.json
+              ├── cypherpunk_knowledge.json
+              └── cryptography_advanced.json
+                         │
+                         ▼
+
+            Carregamento da Aplicação
+                         │
+                         ▼
+
+            Construção do Prompt
+                         │
+                         ▼
+
+            Resposta do Satoshi AI
+
+      ├── Fonte Complementar de Conhecimento
+
+            data/knowledge_base/
+            └── bitcoin_whitepaper.txt
+```
+
+
+Essa abordagem permite separar as fontes originais dos dados processados, facilitando a manutenção, expansão da base de conhecimento e futura evolução para arquiteturas de RAG.
+
+- O agente não consome diretamente os datasets originais. Antes da utilização, os dados passam por uma etapa de processamento e estruturação para otimizar o consumo pela IA.
+
+
+Datasets Hugging Face
+Whitepaper TXT
+        ↓
+Processamento
+        ↓
+JSON estruturado para IA
+        ↓
+Carregamento
+        ↓
+Prompt
 
 ### Como os dados são usados no sistema?
 
-- O sistema utiliza uma arquitetura de RAG (Retrieval-Augmented Generation).
-- As perguntas do usuário são convertidas em embeddings.
-- Um mecanismo de similaridade vetorial recupera os trechos mais relevantes da base de conhecimento.
-- Apenas os chunks mais relevantes são inseridos no prompt da IA para geração da resposta.
+- O sistema utiliza uma abordagem de recuperação contextual baseada em arquivos locais.
+- Os conteúdos são armazenados em arquivos JSON e TXT dentro da pasta data/.
+- Quando uma pergunta é recebida, o sistema consulta a base de conhecimento para identificar informações relacionadas ao tema solicitado.
+- Os trechos relevantes são adicionados ao contexto enviado para a IA, auxiliando na geração de respostas mais precisas e alinhadas às fontes disponíveis.
 
 ---
 
