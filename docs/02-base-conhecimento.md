@@ -25,7 +25,7 @@ Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estru
 - Os dados foram coletados de múltiplas fontes, incluindo datasets do Hugging Face, whitepaper oficial do Bitcoin e materiais audiovisuais.
 - Todos os conteúdos foram padronizados para formatos JSON e TXT, facilitando o processamento e recuperação.
 - As informações foram segmentadas por domínio (técnico, educacional e filosófico) para melhorar a qualidade da recuperação semântica.
-- O conteúdo passa por pré-processamento com divisão em chunks para geração de embeddings e indexação vetorial.
+- O conteúdo é estruturado para permitir divisão em chunks, geração de embeddings e indexação vetorial durante a implementação completa da arquitetura RAG.
 
 ---
 
@@ -138,15 +138,80 @@ with open(
 
 
 Essa abordagem permite separar as fontes originais dos dados processados, facilitando a manutenção, expansão da base de conhecimento e futura evolução para arquiteturas de RAG.
-- O agente não consome diretamente os datasets originais. Antes da utilização, os dados passam por uma etapa de processamento e estruturação para otimizar o consumo pela IA.
 
 
-### Como os dados são usados no sistema?
+### Como os dados são usados no prompt?
 
 - O sistema utiliza uma abordagem de recuperação contextual baseada em arquivos locais.
 - Os conteúdos são armazenados em arquivos JSON e TXT dentro da pasta data/.
 - Quando uma pergunta é recebida, o sistema consulta a base de conhecimento para identificar informações relacionadas ao tema solicitado.
 - Os trechos relevantes são adicionados ao contexto enviado para a IA, auxiliando na geração de respostas mais precisas e alinhadas às fontes disponíveis.
+
+#### Consulta do usuário
+
+> Pergunta: Como funciona a mineração do Bitcoin e qual o papel do SHA-256?
+
+##### Contexto Recuperado da Base de Conhecimento
+
+**Arquivo:** `bitcoin_knowledge.json`
+
+```text
+Tema: Bitcoin Básico
+
+- Bitcoin utiliza um mecanismo de consenso chamado Proof of Work.
+- Os mineradores competem para validar novos blocos.
+- A mineração protege a rede e impede gastos duplos.
+```
+
+**Arquivo:** `cryptography_advanced.json`
+
+```text
+Tema: Criptografia
+
+- SHA-256 é o algoritmo de hash utilizado pelo Bitcoin.
+- O hash transforma dados em uma sequência única de caracteres.
+- Pequenas alterações na entrada geram hashes completamente diferentes.
+```
+
+**Arquivo:** `cypherpunk_knowledge.json`
+
+```text
+Tema: Filosofia Cypherpunk
+
+- A descentralização reduz a dependência de autoridades centrais.
+- A criptografia é utilizada para garantir segurança e soberania digital.
+```
+
+**Arquivo:** `bitcoin_whitepaper.txt`
+
+```text
+Fonte Primária
+
+- O Proof of Work é utilizado para resolver o problema do gasto duplo.
+- A cadeia de blocos permite consenso distribuído sem uma entidade central.
+```
+
+##### Prompt Enviado ao Agente
+
+```text
+Você é Satoshi AI.
+
+Utilize o contexto abaixo para responder de forma educacional,
+técnica e alinhada à filosofia cypherpunk.
+
+[bitcoin_knowledge.json]
+- Bitcoin utiliza Proof of Work...
+- Mineradores validam blocos...
+
+[cryptography_advanced.json]
+- SHA-256 é utilizado para gerar hashes...
+
+[cypherpunk_knowledge.json]
+- Criptografia garante soberania digital...
+
+[bitcoin_whitepaper.txt]
+- Proof of Work resolve o problema do gasto duplo...
+```
 
 ---
 
@@ -160,17 +225,17 @@ Essa abordagem permite separar as fontes originais dos dados processados, facili
 - Fonte: Bitcoin Whitepaper  
   - Tema: Proof of Work  
   - Trecho: "A proof-of-work chain is a solution to the double-spending problem..."  
-  - Score de relevância: 0.91  
+  - Score de relevância: 0.91 (valor ilustrativo para demonstrar a recuperação semântica)
 
 - Fonte: Dataset Bankless  
   - Tema: Filosofia do Bitcoin  
   - Trecho: "Bitcoin enables a decentralized monetary system without trusted intermediaries..."  
-  - Score de relevância: 0.84  
+  - Score de relevância: 0.84 (valor ilustrativo para demonstrar a recuperação semântica)
 
 - Fonte: Glossário interno  
   - Termo: Mining  
   - Definição: Processo de validação de blocos através de SHA-256  
-  - Score de relevância: 0.88  
+  - Score de relevância: 0.88 (valor ilustrativo para demonstrar a recuperação semântica)
 
 ### Prompt enviado ao agente:
 
