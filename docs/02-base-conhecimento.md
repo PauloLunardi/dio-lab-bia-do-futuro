@@ -6,10 +6,15 @@ Os dados do agente são armazenados localmente na pasta `/data` e estruturados e
 
 | Arquivo | Formato | Tipo de Dado | Utilização no Agente |
 |---------|---------|--------------|----------------------|
-|  [`bitcoin_whitepaper.txt`](/data/knowledge_base/bitcoin_whitepaper.txt)  | TXT | Técnico/Primário | Fonte principal do protocolo Bitcoin (base original de Satoshi) |
-| `bitcoin_dataset.json` | JSON | Educacional | Dataset sobre conceitos fundamentais do Bitcoin |
-| `celestia_dataset.json` | JSON | Filosófico | Contexto sobre cypherpunk, descentralização e visão inspirada em Satoshi |
-| `sha256_*.json` | JSON | Técnico | Conhecimento avançado sobre criptografia SHA-256 |
+| [`bitcoin_whitepaper.txt`](/data/knowledge_base/bitcoin_whitepaper.txt) | TXT | Técnico/Primário | Fonte oficial do protocolo Bitcoin utilizada como referência técnica e histórica |
+| [`bitcoin_dataset.json`](/data/raw/bitcoin_dataset.json) | JSON | Educacional | Dataset com conceitos fundamentais do Bitcoin utilizado para respostas introdutórias e educacionais |
+| [`celestia_dataset.json`](/data/raw/celestia_dataset.json) | JSON | Filosófico | Conteúdo relacionado à descentralização, cultura cypherpunk e visão associada ao ecossistema Bitcoin |
+| [`sha256_bounded.json`](/data/raw/sha256_bounded.json) | JSON | Técnico | Dataset sobre propriedades e aprendizado relacionado ao algoritmo SHA-256 |
+| [`sha256_dynamics.json`](/data/raw/sha256_dynamics.json) | JSON | Técnico | Dataset complementar para estudo do comportamento e dinâmica do SHA-256 |
+| [`sha256_probe.json`](/data/raw/sha256_probe.json) | JSON | Técnico | Dataset complementar para exploração avançada de características do SHA-256 |
+| [`bitcoin_knowledge.json`](/data/processed/bitcoin_knowledge.json) | JSON | Conhecimento Processado | Base estruturada para recuperação contextual (RAG) sobre Bitcoin |
+| [`cypherpunk_knowledge.json`](/data/processed/cypherpunk_knowledge.json) | JSON | Conhecimento Processado | Base estruturada para respostas sobre filosofia cypherpunk e descentralização |
+| [`cryptography_advanced.json`](/data/processed/cryptography_advanced.json) | JSON | Conhecimento Processado | Base estruturada para respostas avançadas sobre criptografia e SHA-256 |
 
 > Esses arquivos compõem a base de conhecimento do agente e são utilizados em um pipeline de RAG, garantindo respostas contextualizadas e reduzindo alucinações.
 
