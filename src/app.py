@@ -92,8 +92,27 @@ def perguntar(msg):
         "model": MODELO,
         "prompt": f"{SYSTEM_PROMPT}\n\nCONTEÚDO DA BASE DE CONHECIMENTO:\n{contexto}\n\nPergunta: {msg}"
     }
-    resposta = requests.post(OLLAMA_URL, json=payload, stream=False)
-    return resposta.json()["response"]
+    
+    try:
+        resposta = requests.post(
+            OLLAMA_URL,
+            json=payload,
+            stream=False,
+            timeout=120
+        )
+
+        resposta.raise_for_status()
+
+        return resposta.json()["response"]
+
+    except requests.exceptions.ConnectionError:
+        return "Não foi possível conectar ao Ollama. Verifique se o serviço está em execução."
+
+    except requests.exceptions.Timeout:
+        return "O modelo demorou muito para responder."
+
+    except Exception as e:
+        return f"Erro inesperado: {e}"
 
 # ============ INTERFACE STREAMLIT ============
 st.title("₿ Satoshi AI - Educador sobre Bitcoin e Blockchain")
