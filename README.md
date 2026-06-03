@@ -10,7 +10,11 @@ Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots
 - **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
 
 > [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+> O projeto foi desenvolvido utilizando Ollama para execução local de modelos LLM. Certifique-se de possuir ao menos um modelo instalado, por exemplo:
+
+```bash
+ollama pull qwen3:4b
+```
 
 ---
 
