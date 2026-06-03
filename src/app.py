@@ -1,11 +1,26 @@
 import json
-# import pandas as pd
+import pandas as pd
 import streamlit as st
 import requests
 
 # ============ CONFIGURAÇÃO ============
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODELO = "gpt-oss"
+MODELO = "qwen3:4b"
+
+
+# Agora o app lê a resposta do modelo em streaming, linha por linha.
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={"model": "qwen3:4b", "prompt": "Olá, bem-vindo ao Satoshi AI!"},
+    stream=True  # importante: ativa streaming
+)
+
+for line in response.iter_lines():
+    if line:
+        data = line.decode("utf-8")
+        print(data)  # cada linha é um JSON parcial
+
 
 # ============ CARREGAR DADOS ============
 with open("data/processed/bitcoin_knowledge.json", "r", encoding="utf-8") as f:
@@ -92,25 +107,29 @@ def perguntar(msg):
         "model": MODELO,
         "prompt": f"{SYSTEM_PROMPT}\n\nCONTEÚDO DA BASE DE CONHECIMENTO:\n{contexto}\n\nPergunta: {msg}"
     }
-    
+
     try:
         resposta = requests.post(
             OLLAMA_URL,
             json=payload,
-            stream=False,
+            stream=True,
             timeout=120
         )
 
         resposta.raise_for_status()
 
-        return resposta.json()["response"]
+        texto_final = ""
+        for line in resposta.iter_lines():
+            if line:
+                data = json.loads(line.decode("utf-8"))
+                texto_final += data.get("response", "")
+
+        return texto_final
 
     except requests.exceptions.ConnectionError:
         return "Não foi possível conectar ao Ollama. Verifique se o serviço está em execução."
-
     except requests.exceptions.Timeout:
         return "O modelo demorou muito para responder."
-
     except Exception as e:
         return f"Erro inesperado: {e}"
 
