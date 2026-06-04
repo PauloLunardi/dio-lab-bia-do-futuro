@@ -1,7 +1,4 @@
-# Pitch (3 minutos)
-
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
+# Pitch (3 - 5 minutos)
 
 ## Roteiro Sugerido
 
@@ -61,6 +58,9 @@ O impacto esperado é ampliar o acesso à educação tecnológica descentralizad
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
+> https://drive.google.com/file/d/1knLmLvuR26776-dCHWIujS6qHzrOAChA/view?usp=drive_link
 
 [Link do vídeo]
+
+## Link da apresentação
+> https://gamma.app/docs/Satoshi-AI-mpmv1y5cz2i0hlj
