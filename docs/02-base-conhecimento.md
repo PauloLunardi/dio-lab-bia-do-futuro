@@ -8,7 +8,9 @@
 
 ## Dados Utilizados
 
-Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estruturados em formatos JSON e TXT. Cada fonte possui uma função específica dentro do sistema de RAG (Retrieval-Augmented Generation).
+Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estruturados em formatos JSON e TXT. Cada fonte possui uma função específica dentro do mecanismo de contextualização utilizado pelo agente.
+
+A estrutura foi preparada para futura evolução para uma arquitetura RAG (Retrieval-Augmented Generation), porém a versão atual utiliza carregamento local dos arquivos para construção do contexto enviado ao modelo.
 
 | Arquivo | Formato | Tipo de Dado | Utilização no Agente |
 |---------|---------|--------------|----------------------|
@@ -22,7 +24,7 @@ Os dados do agente são armazenados localmente na pasta [`/data`](/data) e estru
 | [`cypherpunk_knowledge.json`](/data/processed/cypherpunk_knowledge.json) | JSON | Conhecimento Processado | Base estruturada para respostas sobre filosofia cypherpunk e descentralização |
 | [`cryptography_advanced.json`](/data/processed/cryptography_advanced.json) | JSON | Conhecimento Processado | Base estruturada para respostas avançadas sobre criptografia e SHA-256 |
 
-> Esses arquivos compõem a base de conhecimento do agente e são utilizados em um pipeline de RAG, garantindo respostas contextualizadas e reduzindo alucinações.
+> Esses arquivos compõem a base de conhecimento do agente e são utilizados no processo de contextualização das respostas, garantindo maior alinhamento com as fontes disponíveis e reduzindo alucinações.
 
 ---
 
@@ -231,18 +233,28 @@ técnica e alinhada à filosofia cypherpunk.
 - Fonte: Bitcoin Whitepaper  
   - Tema: Proof of Work  
   - Trecho: "A proof-of-work chain is a solution to the double-spending problem..."  
-  - Score de relevância: 0.91 (valor ilustrativo para demonstrar a recuperação semântica)
+  - Score de relevância: 0.91 (valor fictício utilizado apenas para exemplificar uma futura recuperação semântica)
 
 - Fonte: Dataset Bankless  
   - Tema: Filosofia do Bitcoin  
   - Trecho: "Bitcoin enables a decentralized monetary system without trusted intermediaries..."  
-  - Score de relevância: 0.84 (valor ilustrativo para demonstrar a recuperação semântica)
+  - Score de relevância: 0.84 (valor fictício utilizado apenas para exemplificar uma futura recuperação semântica)
 
 - Fonte: Glossário interno  
   - Termo: Mining  
   - Definição: Processo de validação de blocos através de SHA-256  
-  - Score de relevância: 0.88 (valor ilustrativo para demonstrar a recuperação semântica)
+  - Score de relevância: 0.88 (valor fictício utilizado apenas para exemplificar uma futura recuperação semântica)
 
 ### Prompt enviado ao agente:
 
 > Com base no contexto recuperado acima, responda como Satoshi Nakamoto explicaria de forma educacional, objetiva e com linguagem cypherpunk.
+
+## Implementação Atual
+
+A versão atual do Satoshi AI utiliza carregamento local dos arquivos da base de conhecimento.
+
+Durante cada consulta, os arquivos processados e o trecho do Bitcoin Whitepaper são carregados e incorporados ao contexto enviado ao modelo Qwen3:4B executado localmente através do Ollama.
+
+Essa abordagem foi adotada para simplificar a implementação do MVP e garantir respostas fundamentadas em uma base de conhecimento controlada.
+
+A estrutura dos dados foi organizada para permitir futura evolução para uma arquitetura RAG com embeddings, recuperação semântica e banco vetorial.
