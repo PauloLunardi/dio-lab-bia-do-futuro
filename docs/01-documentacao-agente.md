@@ -20,8 +20,9 @@
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-- O agente atua como um tutor inteligente inspirado em Satoshi Nakamoto, ensinando blockchain, Bitcoin e criptografia de forma interativa e personalizada.
-- A IA responde dúvidas, acompanha o progresso do usuário e propõe desafios educativos, recompensando o aprendizado com certificados e NFTs na blockchain Solana.
+- O agente responde perguntas utilizando um modelo LLM executado localmente através do Ollama.
+- O conhecimento utilizado é complementado por uma base própria composta por arquivos JSON processados e pelo Bitcoin Whitepaper.
+- Todas as consultas são enriquecidas com contexto previamente carregado antes do envio ao modelo.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
@@ -33,7 +34,7 @@
   
 ---
 
-## Persona e Tom de Voz
+## Persona, Tom de Voz e estilo
 
 ### Nome do Agente
 Satoshi AI
@@ -66,12 +67,12 @@ Satoshi AI
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Mensagem| B["Streamlit(Interface)"]
-    B --> C[LLM]
-    C --> D[Base de Conhecimento]
-    D --> C
-    C --> E[Validação]
+    A[Usuário] -->|Pergunta| B[Streamlit]
+    B --> C[Prompt do Sistema]
+    C --> D[Contexto da Base]
+    D --> E[Ollama - Qwen3 4B]
     E --> F[Resposta]
+    F --> B
 ```
 
 ### Componentes
@@ -79,33 +80,49 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Streamlit |
-| LLM | Ollama(local) |
-| Base de Conhecimento | JSON/CSV mockados |
-| Validação | Checagem de alucinações |
+| LLM | Ollama executando Qwen3:4B localmente |
+| Base de Conhecimento | bitcoin_knowledge.json, cryptography_advanced.json, cypherpunk_knowledge.json |
+| Fonte Técnica Principal | Bitcoin Whitepaper |
+| Prompt Engineering | Regras de comportamento e restrições do agente |
+| Streaming | Respostas recebidas gradualmente pelo endpoint do Ollama |
+---
 
+## Base de Conhecimento
+
+O agente utiliza uma base de conhecimento composta por documentos estruturados e conteúdos técnicos relacionados ao ecossistema Bitcoin.
+
+### Fontes Utilizadas
+
+- Bitcoin Whitepaper
+- bitcoin_knowledge.json
+- cryptography_advanced.json
+- cypherpunk_knowledge.json
+
+### Estratégia de Contexto
+
+Atualmente toda a base é carregada na memória da aplicação e enviada como contexto para o modelo durante cada consulta.
+
+Esta abordagem simplifica o protótipo acadêmico, porém pode ser substituída futuramente por técnicas de Retrieval-Augmented Generation (RAG) para melhorar desempenho e escalabilidade.
 ---
 
 ## Segurança e Anti-Alucinação
 
-- O agente evita gerar informações especulativas ou não verificadas
-- O sistema informa quando não possui contexto ou confiança suficiente na resposta
-- Não acessa dados bancários, informações sensíveis ou carteiras privadas dos usuários
+- O Bitcoin Whitepaper é tratado como principal referência técnica.
+- O agente possui instruções explícitas para informar limitações quando não houver contexto suficiente.
 - Respostas são limitadas a conteúdos educacionais sobre blockchain, criptografia e fatos públicos relacionados a Satoshi Nakamoto
+- O agente não deve afirmar ser o verdadeiro Satoshi Nakamoto.
 
 ### Estratégias Adotadas
 
-- [x] Respostas educativas baseadas em conceitos de blockchain e criptografia
-- [x] Explicações adaptadas ao nível de conhecimento do usuário
-- [x] Quando não possui certeza, o agente admite limitações
-- [x] Incentiva verificação independente e pensamento crítico
-- [x] Não realiza recomendações financeiras ou promessas de lucro
-- [x] Utiliza linguagem inspirada na cultura cypherpunk e descentralizada
+- [x] Priorização do Bitcoin Whitepaper como fonte técnica principal
+- [x] Restrição explícita contra aconselhamento financeiro
+- [x] Restrição explícita contra previsões de mercado
+- [x] Restrição explícita contra alegações de identidade como Satoshi Nakamoto
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-- Não realiza aconselhamento financeiro
-- Não garante lucros ou previsões de mercado
-- Não executa operações financeiras automaticamente
-- Não substitui especialistas em segurança, investimentos ou regulamentação
-- Atua exclusivamente para fins educacionais e informativos
+- Não possui acesso à internet em tempo real
+- Não consulta dados de mercado em tempo real
+- Não responde adequadamente a temas fora do escopo quando não configurado com filtros adicionais
+- A qualidade da resposta depende da base de conhecimento carregada no contexto
