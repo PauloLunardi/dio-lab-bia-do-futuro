@@ -189,140 +189,136 @@ Projeto acadêmico desenvolvido para estudo de IA Generativa, Engenharia de Prom
 ### ChatGPT
 https://chatgpt.com/
 
-Utilizado para apoio na engenharia de prompts, revisão técnica da documentação, validação de conceitos sobre Bitcoin, blockchain e criptografia, além de suporte no desenvolvimento da aplicação.
+> Utilizado para apoio na engenharia de prompts, revisão técnica da documentação, validação de conceitos sobre Bitcoin, blockchain e criptografia, além de suporte no desenvolvimento da aplicação.
 
 ### Microsoft Copilot
 https://copilot.microsoft.com/
 
-Utilizado para comparação de respostas durante os testes de avaliação do agente e validação dos critérios de assertividade e coerência.
+> Utilizado para comparação de respostas durante os testes de avaliação do agente e validação dos critérios de assertividade e coerência.
 
 ### Google Gemini
 https://gemini.google.com/
 
-Utilizado para comparação de respostas durante os testes de avaliação e análise do comportamento de diferentes modelos de IA.
+> Utilizado para comparação de respostas durante os testes de avaliação e análise do comportamento de diferentes modelos de IA.
 
 ### Grok
 https://grok.com/
 
-Utilizado para comparação de respostas e validação dos testes de comportamento definidos para o agente Satoshi AI.
+> Utilizado para comparação de respostas e validação dos testes de comportamento definidos para o agente Satoshi AI.
 ---
 
 ### Ollama
 https://ollama.com/
 
-Responsável pela execução local do modelo de linguagem utilizado pelo agente Satoshi AI, garantindo privacidade dos dados e independência de serviços externos.
+> Responsável pela execução local do modelo de linguagem utilizado pelo agente Satoshi AI, garantindo privacidade dos dados e independência de serviços externos.
 ---
 
 ### Qwen3:4B
 https://ollama.com/library/qwen3
 
-Modelo de linguagem executado localmente via Ollama. Utilizado para responder perguntas relacionadas a Bitcoin, blockchain, criptografia, SHA-256 e filosofia cypherpunk.
+> Modelo de linguagem executado localmente via Ollama. Utilizado para responder perguntas relacionadas a Bitcoin, blockchain, criptografia, SHA-256 e filosofia cypherpunk.
 ---
 
 ### Streamlit
 https://streamlit.io/
 
-Framework utilizado para construção da interface web do agente Satoshi AI, permitindo interação em formato de chat entre usuário e modelo.
+> Framework utilizado para construção da interface web do agente Satoshi AI, permitindo interação em formato de chat entre usuário e modelo.
 ---
 
 ## Python
 https://www.python.org/
 
-Linguagem principal utilizada para desenvolvimento da aplicação, processamento da base de conhecimento, integração com o modelo de IA e implementação das regras do agente.
+> Linguagem principal utilizada para desenvolvimento da aplicação, processamento da base de conhecimento, integração com o modelo de IA e implementação das regras do agente.
 ---
 
 ## Pandas
 https://pandas.pydata.org/
 
-Biblioteca utilizada para manipulação, organização e processamento de dados durante a construção e preparação da base de conhecimento.
+> Biblioteca utilizada para manipulação, organização e processamento de dados durante a construção e preparação da base de conhecimento.
 ---
 
 ## Requests
 https://requests.readthedocs.io/
 
-Biblioteca utilizada para comunicação entre a aplicação Streamlit e a API local do Ollama.
+> Biblioteca utilizada para comunicação entre a aplicação Streamlit e a API local do Ollama.
 ---
 
 ## Hugging Face
 https://huggingface.co/
 
-Fonte de datasets utilizados na construção da base de conhecimento relacionada a Bitcoin, criptografia, SHA-256 e conceitos técnicos complementares.
+> Fonte de datasets utilizados na construção da base de conhecimento relacionada a Bitcoin, criptografia, SHA-256 e conceitos técnicos complementares.
 ---
 
 ## Bitcoin Whitepaper
 https://bitcoin.org/bitcoin.pdf
 
-Fonte primária de conhecimento utilizada pelo agente para fundamentar respostas técnicas relacionadas ao protocolo Bitcoin.
+> Fonte primária de conhecimento utilizada pelo agente para fundamentar respostas técnicas relacionadas ao protocolo Bitcoin.
 ---
 
 ## NotebookLM
 https://notebooklm.google.com/
 
-Ferramenta utilizada para estudo, organização e análise de conteúdos relacionados a Bitcoin, blockchain, criptografia e filosofia cypherpunk durante a construção da base de conhecimento.
+> Ferramenta utilizada para estudo, organização e análise de conteúdos relacionados a Bitcoin, blockchain, criptografia e filosofia cypherpunk durante a construção da base de conhecimento.
 ---
 
 ## Google Colab
 https://colab.research.google.com/
 
-Utilizado para experimentação, limpeza de dados, testes de código Python e preparação dos datasets utilizados pelo projeto.
+> Utilizado para experimentação, limpeza de dados, testes de código Python e preparação dos datasets utilizados pelo projeto.
 ---
 
 ## Git
 https://git-scm.com/
 
-Sistema de controle de versão utilizado para gerenciamento do código-fonte e histórico de alterações do projeto.
+> Sistema de controle de versão utilizado para gerenciamento do código-fonte e histórico de alterações do projeto.
 ---
 
 ## GitHub
 https://github.com/
 
-Plataforma utilizada para armazenamento do repositório, versionamento do projeto e documentação da solução.
+> Plataforma utilizada para armazenamento do repositório, versionamento do projeto e documentação da solução.
 ---
 
 ## Mermaid
 https://mermaid.js.org/
 
-Ferramenta utilizada para criação dos diagramas presentes na documentação da arquitetura do agente.
+> Ferramenta utilizada para criação dos diagramas presentes na documentação da arquitetura do agente.
 ---
 
 ## Gamma App
 https://gamma.app/
 
-Utilizado como apoio na construção de apresentações e materiais visuais relacionados ao projeto.
+> Utilizado como apoio na construção de apresentações e materiais visuais relacionados ao projeto.
 ---
 
 ## Loom
 https://www.loom.com/
 
-Ferramenta utilizada para gravação das demonstrações e do pitch do projeto.
+> Ferramenta utilizada para gravação das demonstrações e do pitch do projeto.
 ---
 
 ## Clipchamp
 https://clipchamp.com/
 
-Utilizado para edição e consolidação dos vídeos gravados durante a apresentação da solução.
+> Utilizado para edição e consolidação dos vídeos gravados durante a apresentação da solução.
 ---
 
 ## Cloud Clusters
 https://clients.cloudclusters.io/
 
-Plataforma de computação em nuvem utilizada em estudos relacionados a banco de dados, hospedagem de aplicações e experimentação de ambientes de desenvolvimento.
+> Plataforma de computação em nuvem utilizada em estudos relacionados a banco de dados, hospedagem de aplicações e experimentação de ambientes de desenvolvimento.
 ---
 
 ## MariaDB
 https://mariadb.org/
 
-Sistema gerenciador de banco de dados utilizado em projetos de estudo voltados para modelagem, consultas SQL e armazenamento de informações.
+> Sistema gerenciador de banco de dados utilizado em projetos de estudo voltados para modelagem, consultas SQL e armazenamento de informações.
 ---
 
 ## phpMyAdmin
 https://www.phpmyadmin.net/
 
-Ferramenta utilizada para administração de bancos MariaDB, criação de tabelas, execução de consultas SQL e gerenciamento da estrutura dos dados.
----
-
-
-
+> Ferramenta utilizada para administração de bancos MariaDB, criação de tabelas, execução de consultas SQL e gerenciamento da estrutura dos dados.
 ---
 
 ## LinkedIn
