@@ -175,3 +175,10 @@ docs/04-metricas.md
 Paulo Lunardi
 
 Projeto acadêmico desenvolvido para estudo de IA Generativa, Engenharia de Prompt, LLMs Locais e Educação sobre Bitcoin.
+
+## Link do Vídeo
+
+> https://drive.google.com/file/d/1knLmLvuR26776-dCHWIujS6qHzrOAChA/view?usp=drive_link
+
+## Link da apresentação
+> https://gamma.app/docs/Satoshi-AI-mpmv1y5cz2i0hlj
