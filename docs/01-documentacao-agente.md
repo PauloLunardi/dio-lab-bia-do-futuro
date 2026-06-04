@@ -99,10 +99,9 @@ O agente utiliza uma base de conhecimento composta por documentos estruturados e
 - cypherpunk_knowledge.json
 
 ### Estratégia de Contexto
-
 Atualmente toda a base é carregada na memória da aplicação e enviada como contexto para o modelo durante cada consulta.
-
-Esta abordagem simplifica o protótipo acadêmico, porém pode ser substituída futuramente por técnicas de Retrieval-Augmented Generation (RAG) para melhorar desempenho e escalabilidade.
+      
+      Esta abordagem simplifica o protótipo acadêmico, porém pode ser substituída futuramente por técnicas de Retrieval-Augmented Generation (RAG) para melhorar desempenho e escalabilidade.
 ---
 
 ## Segurança e Anti-Alucinação
